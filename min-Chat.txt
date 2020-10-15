@@ -1,0 +1,20 @@
+[02166102@PC169 2]$ ruby min-Chat_Server.rb
+hello
+hi
+whats up
+
+(...)
+
+^C
+min-Chat_Server.rb:9:in `puts': Interrupt
+	from min-Chat_Server.rb:9:in `puts'
+	from min-Chat_Server.rb:9:in `<main>'
+
+---------------------------------------------------------
+
+[02166102@PC169 2]$ ruby min-Chat_Client.rb
+hello
+hi
+whats up
+bye
+

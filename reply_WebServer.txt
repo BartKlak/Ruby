@@ -1,0 +1,44 @@
+http://127.0.0.1:2000/time
+
+Server time: Mon Oct 22 2018 16:17:52 GMT+0900 (JST)
+
+------------------------------------------------------------
+
+http://127.0.0.1:2000/fizzbuzz?num=16
+
+1	1
+2	2
+3	Fizz
+4	4
+5	Buzz
+6	Fizz
+7	7
+8	8
+9	Fizz
+10	Buzz
+11	11
+12	Fizz
+13	13
+14	14
+15	FizzBuzz
+16	16
+
+------------------------------------------------------------
+
+[02166102@PC169 2]$ ruby reply_WebServer.rb
+[2018-10-22 16:17:36] INFO  WEBrick 1.3.1
+[2018-10-22 16:17:36] INFO  ruby 2.0.0 (2014-11-13) [x86_64-linux]
+[2018-10-22 16:17:36] INFO  WEBrick::HTTPServer#start: pid=23524 port=2000
+localhost.localdomain - - [22/Oct/2018:16:17:52 JST] "GET /time HTTP/1.1" 304 0
+- -> /time
+[2018-10-22 16:17:52] ERROR `/serverDate.js' not found.
+localhost.localdomain - - [22/Oct/2018:16:17:52 JST] "GET /serverDate.js HTTP/1.1" 404 283
+http://127.0.0.1:2000/time -> /serverDate.js
+/usr/share/ruby/webrick/httpservlet/cgihandler.rb:47: warning: Insecure world writable dir /home in PATH, mode 040777
+localhost.localdomain - - [22/Oct/2018:16:18:56 JST] "GET /fizzbuzz HTTP/1.1" 200 42
+- -> /fizzbuzz
+localhost.localdomain - - [22/Oct/2018:16:19:09 JST] "GET /fizzbuzz?num=16 HTTP/1.1" 200 542
+- -> /fizzbuzz?num=16
+^C[2018-10-22 16:21:52] INFO  going to shutdown ...
+[2018-10-22 16:21:52] INFO  WEBrick::HTTPServer#start done.
+

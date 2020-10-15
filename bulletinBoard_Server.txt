@@ -1,0 +1,46 @@
+http://127.0.0.1:2000/write?msg=king
+
+your message: king
+
+-------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:2000/write?msg=door
+
+This is the forbidden word!
+
+-------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:2000/index
+
+id: 1
+id: 2
+id: 3
+
+-------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:2000/read?id=2
+
+your message was: hello 
+
+-------------------------------------------------------------------------------------------------------
+
+[02166102@PC169 2]$ ruby bulletinBoard_Server.rb
+[2018-10-22 16:23:47] INFO  WEBrick 1.3.1
+[2018-10-22 16:23:47] INFO  ruby 2.0.0 (2014-11-13) [x86_64-linux]
+[2018-10-22 16:23:47] INFO  WEBrick::HTTPServer#start: pid=24919 port=2000
+/usr/share/ruby/webrick/httpservlet/cgihandler.rb:47: warning: Insecure world writable dir /home in PATH, mode 040777
+localhost.localdomain - - [22/Oct/2018:16:24:00 JST] "GET /write?msg=hi HTTP/1.1" 200 50
+- -> /write?msg=hi
+localhost.localdomain - - [22/Oct/2018:16:24:06 JST] "GET /write?msg=door HTTP/1.1" 200 58
+- -> /write?msg=door
+localhost.localdomain - - [22/Oct/2018:16:24:13 JST] "GET /write?msg=hello HTTP/1.1" 200 53
+- -> /write?msg=hello
+localhost.localdomain - - [22/Oct/2018:16:24:19 JST] "GET /write?msg=king HTTP/1.1" 200 52
+- -> /write?msg=king
+localhost.localdomain - - [22/Oct/2018:16:24:35 JST] "GET /index HTTP/1.1" 200 63
+- -> /index
+localhost.localdomain - - [22/Oct/2018:16:25:08 JST] "GET /read?id=2 HTTP/1.1" 200 59
+- -> /read?id=2
+^C[2018-10-22 16:25:15] INFO  going to shutdown ...
+[2018-10-22 16:25:15] INFO  WEBrick::HTTPServer#start done.
+
